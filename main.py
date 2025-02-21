@@ -58,7 +58,10 @@ def handle_key_press(event):
     if is_set_mode:
         add_position(key)
     else:
-        click_given_position(key)
+        try:
+            click_given_position(key)
+        except KeyError:
+            print("할당되지 않은 번호")
 
 
 # GUI
